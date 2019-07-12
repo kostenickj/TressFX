@@ -272,7 +272,8 @@ void CSceneRender::CreateShaderAndLayout( ID3D11Device* pd3dDevice, AMD::ShaderC
     // Create the stream-out geometry shader from the stream-out vertex shaders
     ID3DBlob *pStreamOutVS = NULL, *pErrors = NULL;
     HRESULT hr;
-    hr = D3DCompileFromFile(L"..\\src\\Shaders\\SceneRender.hlsl", NULL, NULL, "SkinStreamOutVS", "vs_5_0", 0, 0, &pStreamOutVS, &pErrors);
+	UINT compileFlags = D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION;
+    hr = D3DCompileFromFile(L"..\\src\\Shaders\\SceneRender.hlsl", NULL, NULL, "SkinStreamOutVS", "vs_5_0", compileFlags, 0, &pStreamOutVS, &pErrors);
     if (pErrors)
     {
         wchar_t *errorString;
@@ -297,7 +298,7 @@ void CSceneRender::CreateShaderAndLayout( ID3D11Device* pd3dDevice, AMD::ShaderC
         SODeclarationEntry, 1, bufferStrides, 1, D3D11_SO_NO_RASTERIZED_STREAM, NULL, &m_pGSSkinStreamOut);
 
     // create the geometry shader for streaming out untransformed vertices
-    hr = D3DCompileFromFile(L"..\\src\\Shaders\\SceneRender.hlsl", NULL, NULL, "StreamOutVS", "vs_5_0", 0, 0, &pStreamOutVS, &pErrors);
+    hr = D3DCompileFromFile(L"..\\src\\Shaders\\SceneRender.hlsl", NULL, NULL, "StreamOutVS", "vs_5_0", compileFlags, 0, &pStreamOutVS, &pErrors);
     if (pErrors)
     {
         wchar_t *errorString;

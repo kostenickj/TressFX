@@ -380,7 +380,9 @@ HRESULT AMD::CompileShaderFromFile( WCHAR* szFileName, LPCSTR szEntryPoint,
     HRESULT   hr = E_FAIL;
     ID3DBlob* error = NULL;
 
-    hr = D3DCompileFromFile( szFileName, pDefines, D3D_COMPILE_STANDARD_FILE_INCLUDE, szEntryPoint, szShaderModel, 0, 0, ppBlobOut, &error );
+	UINT compileFlags = D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION;
+
+    hr = D3DCompileFromFile( szFileName, pDefines, D3D_COMPILE_STANDARD_FILE_INCLUDE, szEntryPoint, szShaderModel, compileFlags, 0, ppBlobOut, &error );
     if (hr != S_OK || ppBlobOut == NULL || *ppBlobOut == NULL)
     {
         if (error != NULL)

@@ -609,7 +609,7 @@ HRESULT WINAPI DXUTCompileFromFile( LPCWSTR pFileName,
     // Setting this flag improves the shader debugging experience, but still allows 
     // the shaders to be optimized and to run exactly the way they will run in 
     // the release configuration of this program.
-    Flags1 |= D3DCOMPILE_DEBUG;
+    Flags1 |= D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION;
 #endif
 
     ID3DBlob* pErrorBlob = nullptr;

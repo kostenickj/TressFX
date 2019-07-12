@@ -1,0 +1,9 @@
+=== Sushi 4.0 DEBUG VERSION for DirectX 11, Build 16 (Compiled on Dec  7 2016 18:18:10)
+
+[14:42:21] GPU Description: Intel(R) HD Graphics 630
+[14:42:21] VendorId: 0x8086
+[14:42:21] DeviceId: 0x591b
+[14:42:21] SubSysID: 0x7a91028
+SuEngine.cpp(1269) : [14:42:21] ERROR: Error file "Sushi.ini"
+[14:42:21] Peak memory usage: 0.01 MB
+[14:42:21] Current memory usage: 0.01 MB

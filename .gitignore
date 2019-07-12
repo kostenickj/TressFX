@@ -44,3 +44,6 @@ UpgradeLog*.htm
 # Shader cache
 [Bb]in/Shaders/Cache/
 HashDigest.html
+amd_tressfx/src/Shaders/inc
+amd_tressfx/src/Shaders/inc/*
+amd_tressfx_sample/bin/ShaderCache

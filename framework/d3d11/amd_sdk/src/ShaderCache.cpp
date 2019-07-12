@@ -351,7 +351,7 @@ ShaderCache::ShaderCache( const SHADER_AUTO_RECOMPILE_TYPE i_keAutoRecompileTouc
     m_pProgressInfo = NULL;
     m_uProgressCounter = 0;
 
-    m_bForceDebugShaders = false;
+    m_bForceDebugShaders = true;
 
     m_watchHandle = NULL;
     m_waitPoolHandle = NULL;
